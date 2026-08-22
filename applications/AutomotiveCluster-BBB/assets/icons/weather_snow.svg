@@ -1,0 +1,13 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Glowing neon blue snowflake -->
+  <g stroke="#00BFFF" stroke-width="2" stroke-linecap="round" fill="none">
+    <!-- Vertical and Horizontal -->
+    <path d="M16 4 L16 28 M4 16 L28 16" />
+    <!-- Diagonals -->
+    <path d="M7.5 7.5 L24.5 24.5 M7.5 24.5 L24.5 7.5" />
+    
+    <!-- Little arrow branches off the top/bottom/left/right tips -->
+    <path d="M13 7 L16 4 L19 7 M13 25 L16 28 L19 25" />
+    <path d="M7 13 L4 16 L7 19 M25 13 L28 16 L25 19" />
+  </g>
+</svg>

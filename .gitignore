@@ -1,0 +1,46 @@
+# Toolchains, Kernels, Qt Framework & Target RootFS
+qt/
+linux/
+toolchain/
+u-boot/
+busybox/
+bbb-rootfs/
+rootfs/
+lib/
+images/
+nfs-root/
+
+# Extracted dependency sources (built from tarballs)
+applications/dropbear/dropbear-*/
+applications/zlib/zlib-*/
+
+# Build directories & IDE configs
+applications/**/build/
+applications/**/build-*/
+applications/**/.qtcreator/
+
+# Compiled Binary Objects & Libraries
+*.o
+*.lo
+*.a
+*.so
+*.so.*
+*.la
+*.d
+*.ko
+*.mod
+*.mod.c
+*.mod.o
+*.dwo
+.*.cmd
+.module-common.*
+modules.order
+Module.symvers
+
+# Compiled Executables
+drivers/test_gpio
+
+# Temp & local config files
+scripts/.config*
+*.tmp
+*.log

@@ -1,0 +1,28 @@
+/dts-v1/;
+/plugin/;
+
+#include <dt-bindings/pinctrl/am33xx.h>
+
+/{
+	compatible = "ti,am335x-bone-black";
+
+	fragment@0 {
+		target = <&am33xx_pinmux>;
+		__overlay__ {
+			uart1_pins: uart1-pins {
+				pinctrl-single,pins = <
+					AM33XX_PADCONF(AM335X_PIN_UART1_RXD, PIN_INPUT_PULLUP, MUX_MODE0)
+					AM33XX_PADCONF(AM335X_PIN_UART1_TXD, PIN_OUTPUT, MUX_MODE0)
+				>;
+			};
+		};
+	};
+	fragment@1 {
+		target = <&uart1>;
+		__overlay__ {
+			status = "okay";
+			pinctrl-names = "default";
+			pinctrl-0 = <&uart1_pins>;
+		};
+	};
+};

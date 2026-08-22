@@ -1,0 +1,10 @@
+console=ttyO0,115200n8
+overlays=bbb-uart1.dtbo
+dtbopath=/lib/firmware
+overlayenvsetup=setenv fdtaddr 0x87f00000; setenv fdtovaddr 0x87fc0000;
+fdtload=load mmc 0:1 ${fdtaddr} am335x-boneblack.dtb;
+fdtcmd=fdt addr ${fdtaddr}; fdt resize 8192;
+fdtovload=for i in ${overlays}; do echo applying overlays...; load mmc 0:2 ${fdtovaddr} ${dtbopath}/${i}; fdt apply $fdtovaddr;done
+mmcargs=setenv bootargs console=ttyO0,115200n8 root=/dev/mmcblk0p2 rw rootfstype=ext4 rootwait debug earlyprintk mem=512M
+mmcboot=run overlayenvsetup; run fdtload; run fdtcmd; run fdtovload; echo Booting from microSD ...; setenv autoload no ; load mmc 0:1 ${loadaddr} zImage ; run mmcargs ; bootz ${loadaddr} - ${fdtaddr}
+uenvcmd=run mmcboot

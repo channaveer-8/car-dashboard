@@ -1,0 +1,53 @@
+mainmenu "Embedded Linux BSP for BeagleBone Black"
+
+comment "BeagleBone Black - TI Sitara AM335x"
+
+menu "Clean Options"
+
+config CLEAN_UBOOT
+    bool "Clean U-Boot"
+
+config CLEAN_KERNEL
+    bool "Clean Kernel"
+
+config CLEAN_ROOTFS
+    bool "Clean RootFS"
+
+config CLEAN_ALL
+    bool "Clean Complete BSP"
+
+endmenu
+
+menu "Configure Options"
+
+config CONFIGURE_UBOOT
+    bool "Configure U-Boot"
+
+config CONFIGURE_KERNEL
+    bool "Configure Kernel"
+
+config CONFIGURE_ROOTFS
+    bool "Configure BusyBox"
+
+endmenu
+
+menu "Build Options"
+
+config BUILD_UBOOT
+    bool "Build U-Boot"
+
+config BUILD_KERNEL
+    bool "Build Kernel"
+
+config BUILD_ROOTFS
+    bool "Build RootFS"
+
+config BUILD_APPS
+    bool "Build Application"
+
+config BUILD_ALL
+    bool "Build Complete BSP"
+
+endmenu
+
+comment "********Developed by Channaveer********"

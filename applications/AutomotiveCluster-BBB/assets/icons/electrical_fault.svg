@@ -1,0 +1,11 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Battery Casing -->
+  <path d="M4 12 h24 v14 h-24 z" fill="none" stroke="#FF3333" stroke-width="2"/>
+  <!-- Positive terminal -->
+  <path d="M8 12 v-4 m-2 2 h4" stroke="#FF3333" stroke-width="2"/>
+  <!-- Negative terminal -->
+  <path d="M22 12 v-4 m-2 2 h4" stroke="#FF3333" stroke-width="2"/>
+  <!-- Internal +/- labels -->
+  <text x="10" y="22" font-family="sans-serif" font-weight="bold" font-size="8" fill="#FF3333" dominant-baseline="middle" text-anchor="middle">+</text>
+  <text x="22" y="22" font-family="sans-serif" font-weight="bold" font-size="8" fill="#FF3333" dominant-baseline="middle" text-anchor="middle">-</text>
+</svg>

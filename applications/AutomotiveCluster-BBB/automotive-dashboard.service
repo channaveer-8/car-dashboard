@@ -1,0 +1,17 @@
+[Unit]
+Description=Automotive Cluster Qt Dashboard Application
+After=network.target bt-serial-gateway.service
+
+[Service]
+Type=simple
+User=debian
+WorkingDirectory=/home/debian
+Environment="LD_LIBRARY_PATH=/home/debian/qt6.11/lib"
+Environment="QT_PLUGIN_PATH=/home/debian/qt6.11/plugins"
+Environment="QML2_IMPORT_PATH=/home/debian/qt6.11/qml"
+ExecStart=/home/debian/appAutomotiveCluster -platform vnc:size=800x480:draw-rate=10
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

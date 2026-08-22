@@ -1,0 +1,23 @@
+console=ttyO0,115200n8
+
+boot_sd=echo "Trying to boot from SD Card....."; \
+mmc dev 0 && \
+load mmc 0:1 ${loadaddr} zImage && \
+load mmc 0:1 ${fdtaddr} am335x-boneblack.dtb && \
+setenv bootargs console=${console} root=/dev/mmcblk0p2 rw rootwait && \
+bootz ${loadaddr} - ${fdtaddr}
+
+
+boot_nfs=echo "Trying to boot from NFS....."; \
+setenv ipaddr 192.168.27.2; \
+setenv serverip 192.168.27.1; \
+setenv autoload no; \
+tftpboot ${loadaddr} zImage && \
+tftpboot ${fdtaddr} am335x-boneblack.dtb && \
+setenv bootargs console=${console} root=/dev/nfs rw nfsroot=${serverip}:/srv/nfs/buildroot,nolock,v3,wsize=1024,rsize=1024 rootwait rootdelay=5 ip=${ipaddr} init=/sbin/init && \
+bootz ${loadaddr} - ${fdtaddr}
+
+uenvcmd=run boot_sd
+
+
+
